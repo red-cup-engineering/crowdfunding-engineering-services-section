@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { computeGoalFromTasks, campaignReadinessScore } from "../src/crowdfunding.mjs";
-import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-services-section/operation";
+import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-operation-engineering-services-section/operation";
 
 /**
  * @param {import("../src/crowdfunding.mjs").CampaignSpec} campaign
@@ -63,6 +63,6 @@ export function renderCampaignPage(campaign, tiers) {
 }
 
 if (import.meta.main) {
-  const result = await runJavascriptNodeOperation({ name: "render-campaign-page", description: "renderCampaignPage — the render-campaign-page operation.", operation: renderCampaignPage }, { arguments: process.argv.slice(2), standardInput: process.stdin, standardOutput: process.stdout });
+  const result = await runJavascriptNodeOperation({ name: "render-campaign-page", description: "renderCampaignPage — the render-campaign-page operation.", inputSchema: { type: "object", required: ["campaign", "tiers"], properties: { campaign: { type: "object" }, tiers: { type: "array" } }, additionalProperties: false }, operation: ({ campaign, tiers }) => renderCampaignPage(campaign, tiers) }, { arguments: process.argv.slice(2), standardInput: process.stdin, standardOutput: process.stdout });
   process.exitCode = result.exitCode;
 }

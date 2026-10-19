@@ -5,7 +5,7 @@
 // crowdfunded-cultural-tech-campaign enterprise this section generalizes.
 
 import { resolve } from "node:path";
-import { createSemanticRecordJournal } from "@red-cup-engineering/semiotic-eavt-services-section/record-semantic-record";
+import { createSemanticRecordJournal } from "@red-cup-engineering/semantic-record-journal-service";
 
 export const JOURNAL_OBJECT_KIND = "crowdfunding.journal-record";
 const categoryCoordinate = (category) => `record:${category}`;
@@ -22,7 +22,7 @@ export function recordJournal(root, category, recordedAt, record) {
     category: categoryCoordinate(category),
     record,
     recordedAt,
-    told: { for: true, against: false },
+    charge: { support: true, refutation: false },
   });
 }
 

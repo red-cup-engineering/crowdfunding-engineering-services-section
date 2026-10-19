@@ -4,7 +4,7 @@
 
 import { campaignReadinessScore } from "../src/crowdfunding.mjs";
 import { recordJournal } from "../src/journal.mjs";
-import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-services-section/operation";
+import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-operation-engineering-services-section/operation";
 
 /**
  * @param {import("../src/crowdfunding.mjs").CampaignSpec} campaign
@@ -19,6 +19,6 @@ export function recordCampaignReadiness(campaign, { root, now = () => new Date()
 }
 
 if (import.meta.main) {
-  const result = await runJavascriptNodeOperation({ name: "campaign-readiness", description: "recordCampaignReadiness — the campaign-readiness operation.", operation: recordCampaignReadiness }, { arguments: process.argv.slice(2), standardInput: process.stdin, standardOutput: process.stdout });
+  const result = await runJavascriptNodeOperation({ name: "campaign-readiness", description: "recordCampaignReadiness — the campaign-readiness operation.", inputSchema: { type: "object", required: ["campaign", "root"], properties: { campaign: { type: "object" }, root: { type: "string", minLength: 1 }, recordedAt: { type: "string", minLength: 1 } }, additionalProperties: false }, operation: ({ campaign, root, recordedAt }) => recordCampaignReadiness(campaign, { root, ...(recordedAt === undefined ? {} : { now: () => recordedAt }) }) }, { arguments: process.argv.slice(2), standardInput: process.stdin, standardOutput: process.stdout });
   process.exitCode = result.exitCode;
 }
