@@ -5,7 +5,7 @@
 
 import { computeGoalFromTasks } from "../src/crowdfunding.mjs";
 import { loadCampaignSpec } from "./load-campaign-data.mjs";
-import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-services-section/operation";
+import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-operation-engineering-services-section/operation";
 
 /**
  * @param {string} campaignPath

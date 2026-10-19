@@ -90,3 +90,27 @@ no campaign of its own.
 ## Tests
 
 `npm test` -- `node --test test/*.test.mjs`.
+
+## Published command and journal contracts
+
+The command faces use the independent operation runtime 0.2.0 and Node >=24.2.
+The journal wrapper selects the existing semantic-record-journal-service 0.1.11
+factory and its explicit `charge: {support: true, refutation: false}` testimony.
+Object kind, category coordinates and caller-owned roots are preserved; no new
+journal engine or automatic migration of installed state is introduced.
+
+Each direct operation command reads one JSON value per line and writes canonical
+NDJSON through the shared runtime. `compute-goal` and `validate-campaign` retain
+their existing JSON string file-path input. `render-campaign-page` accepts
+`{campaign, tiers}`. `campaign-readiness` accepts `{campaign, root, recordedAt?}`;
+`root` is required, and an optional caller-supplied observation time replaces the
+clock for that request. These two object requests bind the existing functions'
+multiple arguments without changing their imported function interfaces. Missing
+required fields are refused before effects, with a structured refusal and exit 2.
+The composed `crowdfunding` app retains its positional file-path interface.
+
+Run the original native tests plus `test/operation-cli.test.mjs`; the latter
+executes the actual command faces with synthetic campaigns and temporary roots,
+covering successful binding, supplied time, persistence and refusal before writes.
+Packed qualification supplies these source-owned tests separately from the
+published files. No test creates a real campaign, payment or external message.

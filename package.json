@@ -32,12 +32,11 @@
     "verify": "npm run check && npm test"
   },
   "dependencies": {
-    "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
-    "@red-cup-engineering/javascript-node-services-section": "workspace:*",
-    "@red-cup-engineering/witness-journal-document-service": "workspace:*"
+    "@red-cup-engineering/javascript-node-operation-engineering-services-section": "0.2.0",
+    "@red-cup-engineering/semantic-record-journal-service": "0.1.11"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24.2.0"
   },
   "keywords": [
     "crowdfunding",
