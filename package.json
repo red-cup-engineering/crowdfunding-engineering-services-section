@@ -1,11 +1,11 @@
 {
-  "name": "@red-cup-engineering/crowdfunding-services-section",
+  "name": "@red-cup-engineering/crowdfunding-engineering-services-section",
   "version": "0.3.0-dev.0",
   "type": "module",
   "description": "Crowdfunding campaign engineering: campaign-spec and reward-tier-ladder validation, task-and-bill-of-materials goal math (labor and physical-goods), readiness scoring, and pledge/readiness journaling -- with every campaign and reward ladder loaded as caller data (JSON), never a module constant.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/red-cup-engineering/crowdfunding-services-section.git"
+    "url": "git+https://github.com/red-cup-engineering/crowdfunding-engineering-services-section.git"
   },
   "main": "src/crowdfunding.mjs",
   "exports": {
