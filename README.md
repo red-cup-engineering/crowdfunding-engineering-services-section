@@ -29,7 +29,7 @@ alongside the other web2 platform integrations.
   precedent this section's own seat follows.
 - No `crowdfunding-services-section` (or synonym) existed anywhere in the
   tree or on the registry (`npm view
-  @red-cup-engineering/crowdfunding-services-section` 404s) before this
+  @red-cup-engineering/crowdfunding-engineering-services-section` 404s) before this
   section was created.
 
 ## Provenance
@@ -60,7 +60,7 @@ calls this package, pinned exactly, for all engine logic.
     labor-only goal -- a campaign that declares none of them gets exactly
     the prior labor-only goal.
 - `src/journal.mjs` -- thin wrapper over
-  `@red-cup-engineering/semiotic-eavt-services-section`.
+  `@red-cup-engineering/semiotic-eavt-engineering-services-section`.
 - `scripts/load-campaign-data.mjs` -- reads a `CampaignSpec` or
   `RewardTier[]` from a JSON file on disk; the only I/O primitive the
   other scripts share.
