@@ -1,4 +1,4 @@
-# Crowdfunding Services Section
+# @red-cup-engineering/crowdfunding-engineering-services-section
 
 <!-- 561-group-standards:badges:start -->
 [![Red Cup Engineering](https://img.shields.io/badge/561%20Group-Red%20Cup%20Engineering-c0392b)](https://github.com/red-cup-engineering)
@@ -6,6 +6,8 @@
 [![Indigenous data: CARE](https://img.shields.io/badge/Indigenous%20data-CARE-4b6f44)](https://github.com/red-cup-engineering/.github/blob/main/GOVERNANCE.md)
 [![Tips welcome](https://img.shields.io/badge/tips-welcome-d4a017)](https://github.com/561-group/.github/blob/main/TIPS.md)
 <!-- 561-group-standards:badges:end -->
+
+Crowdfunding campaign engineering: campaign-spec and reward-tier-ladder validation, task-and-bill-of-materials goal math (labor and physical-goods), readiness scoring, and pledge/readiness journaling -- with every campaign and reward ladder loaded as caller data (JSON), never a module constant.
 
 Reusable crowdfunding-campaign engineering -- campaign-spec and
 reward-tier-ladder validation, task-and-bill-of-materials goal math,
