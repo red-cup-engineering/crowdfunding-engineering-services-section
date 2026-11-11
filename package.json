@@ -32,7 +32,7 @@
     "verify": "npm run check && npm test"
   },
   "dependencies": {
-    "@red-cup-engineering/javascript-node-operation-engineering-services-section": "0.2.0",
+    "@red-cup-engineering/node-js-function-engineering-services-section": "^0.5.1",
     "@red-cup-engineering/semantic-record-journal-service": "0.1.11"
   },
   "engines": {

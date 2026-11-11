@@ -4,7 +4,7 @@
 
 import { campaignReadinessScore } from "../src/crowdfunding.mjs";
 import { recordJournal } from "../src/journal.mjs";
-import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-operation-engineering-services-section/operation";
+import { runJavascriptNodeOperation } from "@red-cup-engineering/node-js-function-engineering-services-section/operation";
 
 /**
  * @param {import("../src/crowdfunding.mjs").CampaignSpec} campaign

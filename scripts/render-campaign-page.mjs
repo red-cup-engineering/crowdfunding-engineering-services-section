@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { computeGoalFromTasks, campaignReadinessScore } from "../src/crowdfunding.mjs";
-import { runJavascriptNodeOperation } from "@red-cup-engineering/javascript-node-operation-engineering-services-section/operation";
+import { runJavascriptNodeOperation } from "@red-cup-engineering/node-js-function-engineering-services-section/operation";
 
 /**
  * @param {import("../src/crowdfunding.mjs").CampaignSpec} campaign
