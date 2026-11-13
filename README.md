@@ -24,12 +24,12 @@ alongside the other web2 platform integrations.
   sit in front of Stripe for its own checkout, but campaign-spec/reward-tier
   math and readiness scoring are a different capability with no payment
   processing of its own; nothing here duplicates it.
-- `web2-platform-services-section/services/buttondown-services-section` --
+- `web2-platform-services-section/services/buttondown-engineering-services-section` --
   owns newsletter delivery. Unrelated capability; checked because it is the
   other single-purpose platform-integration sibling already seated directly
   under `web2-platform-services-section` (no deeper taxonomy invented), the
   precedent this section's own seat follows.
-- No `crowdfunding-services-section` (or synonym) existed anywhere in the
+- No `crowdfunding-engineering-services-section` (or synonym) existed anywhere in the
   tree or on the registry (`npm view
   @red-cup-engineering/crowdfunding-engineering-services-section` 404s) before this
   section was created.
