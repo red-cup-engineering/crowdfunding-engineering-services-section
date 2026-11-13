@@ -31,7 +31,7 @@ alongside the other web2 platform integrations.
   precedent this section's own seat follows.
 - No `crowdfunding-services-section` (or synonym) existed anywhere in the
   tree or on the registry (`npm view
-  @red-cup-engineering/crowdfunding-services-section` 404s) before this
+  @red-cup-engineering/crowdfunding-engineering-services-section` 404s) before this
   section was created.
 
 ## Provenance
