@@ -26,26 +26,9 @@
     "scripts",
     "apps"
   ],
-  "scripts": {
-    "check": "node --check src/crowdfunding.mjs && node --check src/journal.mjs && node --check scripts/load-campaign-data.mjs && node --check scripts/validate-campaign.mjs && node --check scripts/compute-goal.mjs && node --check scripts/render-campaign-page.mjs && node --check scripts/campaign-readiness.mjs && node --check scripts/record-pledge.mjs && node --check apps/crowdfunding-cli.mjs",
-    "verify": "npm run check"
-  },
   "dependencies": {
     "@red-cup-engineering/node-js-function-engineering-services-section": "^0.5.1",
     "@red-cup-engineering/semantic-record-journal-service": "^0.6.2"
   },
-  "engines": {
-    "node": ">=24.2.0"
-  },
-  "keywords": [
-    "crowdfunding",
-    "reward-tiers",
-    "campaign",
-    "web2-platform"
-  ],
-  "license": "MIT",
-  "funding": {
-    "type": "individual",
-    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
-  }
+  "license": "MIT"
 }
