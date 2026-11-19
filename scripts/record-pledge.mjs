@@ -3,7 +3,7 @@
 // ladder, enforcing a capped tier's quantityCap by refusing once sold out.
 // Imports src and scripts only.
 
-import { recordJournal, journalRecords } from "../src/journal.mjs";
+import { recordLog, logRecords } from "../src/journal.mjs";
 import { loadCampaignSpec, loadRewardLadder } from "./load-campaign-data.mjs";
 
 /**
@@ -18,7 +18,7 @@ export function recordPledge(campaignId, tierId, tiers, { root, backerNote = "",
   if (!tier) throw new Error(`no reward tier "${tierId}" in campaign "${campaignId}"`);
 
   if (tier.quantityCap !== null && tier.quantityCap !== undefined) {
-    const claimed = journalRecords(root, "pledge").filter((p) => p.campaignId === campaignId && p.tierId === tierId).length;
+    const claimed = logRecords(root, "pledge").filter((p) => p.campaignId === campaignId && p.tierId === tierId).length;
     if (claimed >= tier.quantityCap) {
       throw new Error(`reward tier "${tierId}" is sold out (cap ${tier.quantityCap})`);
     }
@@ -26,7 +26,7 @@ export function recordPledge(campaignId, tierId, tiers, { root, backerNote = "",
 
   const pledgedAt = now();
   const pledge = { campaignId, tierId, priceUsd: tier.priceUsd, backerNote, pledgedAt };
-  recordJournal(root, "pledge", pledgedAt, pledge);
+  recordLog(root, "pledge", pledgedAt, pledge);
   return pledge;
 }
 
@@ -36,7 +36,7 @@ export function recordPledge(campaignId, tierId, tiers, { root, backerNote = "",
  * @returns {{campaignId:string, totalPledgedUsd:number, backerCount:number}}
  */
 export function campaignPledgeTotal(campaignId, { root }) {
-  const pledges = journalRecords(root, "pledge").filter((p) => p.campaignId === campaignId);
+  const pledges = logRecords(root, "pledge").filter((p) => p.campaignId === campaignId);
   return {
     campaignId,
     totalPledgedUsd: pledges.reduce((sum, p) => sum + p.priceUsd, 0),
