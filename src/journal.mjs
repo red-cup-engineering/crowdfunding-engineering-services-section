@@ -7,9 +7,9 @@
 import { resolve } from "node:path";
 import { createSemanticRecordJournal } from "@red-cup-engineering/semantic-record-journal-service";
 
-export const LOG_OBJECT_KIND = "crowdfunding.journal-record";
+export const JOURNAL_OBJECT_KIND = "crowdfunding.journal-record";
 const categoryCoordinate = (category) => `record:${category}`;
-const log = (root) => createSemanticRecordJournal({ root: resolve(root), objectKind: LOG_OBJECT_KIND });
+const journal = (root) => createSemanticRecordJournal({ root: resolve(root), objectKind: JOURNAL_OBJECT_KIND });
 
 /**
  * @param {string} root section root the caller journals under (writes land at `<root>/data/logs`)
@@ -17,8 +17,8 @@ const log = (root) => createSemanticRecordJournal({ root: resolve(root), objectK
  * @param {string} recordedAt ISO timestamp
  * @param {object} record
  */
-export function recordLog(root, category, recordedAt, record) {
-  return log(root).record({
+export function recordJournal(root, category, recordedAt, record) {
+  return journal(root).record({
     category: categoryCoordinate(category),
     record,
     recordedAt,
@@ -31,6 +31,6 @@ export function recordLog(root, category, recordedAt, record) {
  * @param {string} category
  * @returns {object[]}
  */
-export function logRecords(root, category) {
-  return log(root).query({ category: categoryCoordinate(category) }).map(({ record }) => record);
+export function journalRecords(root, category) {
+  return journal(root).query({ category: categoryCoordinate(category) }).map(({ record }) => record);
 }

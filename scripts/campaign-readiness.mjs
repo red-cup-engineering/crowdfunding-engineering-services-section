@@ -3,7 +3,7 @@
 // why), loaded from a JSON file on disk. Imports src and scripts only.
 
 import { campaignReadinessScore } from "../src/crowdfunding.mjs";
-import { recordLog } from "../src/journal.mjs";
+import { recordJournal } from "../src/journal.mjs";
 import { runJavascriptNodeOperation } from "@red-cup-engineering/node-js-function-engineering-services-section/operation";
 
 /**
@@ -14,7 +14,7 @@ export function recordCampaignReadiness(campaign, { root, now = () => new Date()
   const readiness = campaignReadinessScore(campaign);
   const recordedAt = now();
   const record = { campaignId: campaign.id, status: readiness.status, blockers: readiness.blockers, assessedAt: recordedAt };
-  recordLog(root, "campaign-readiness", recordedAt, record);
+  recordJournal(root, "campaign-readiness", recordedAt, record);
   return record;
 }
 
