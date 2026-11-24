@@ -1,0 +1,34 @@
+{
+  "name": "@red-cup-engineering/crowdfunding-engineering-services-section",
+  "version": "0.3.1-dev.0",
+  "type": "module",
+  "description": "Crowdfunding campaign engineering: campaign-spec and reward-tier-ladder validation, task-and-bill-of-materials goal math (labor and physical-goods), readiness scoring, and pledge/readiness journaling -- with every campaign and reward ladder loaded as caller data (JSON), never a module constant.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/crowdfunding-engineering-services-section.git"
+  },
+  "main": "src/crowdfunding.mjs",
+  "exports": {
+    ".": "./src/crowdfunding.mjs",
+    "./journal": "./src/journal.mjs",
+    "./load-campaign-data": "./scripts/load-campaign-data.mjs",
+    "./validate-campaign": "./scripts/validate-campaign.mjs",
+    "./compute-goal": "./scripts/compute-goal.mjs",
+    "./render-campaign-page": "./scripts/render-campaign-page.mjs",
+    "./campaign-readiness": "./scripts/campaign-readiness.mjs",
+    "./record-pledge": "./scripts/record-pledge.mjs"
+  },
+  "bin": {
+    "crowdfunding": "apps/crowdfunding-cli.mjs"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "apps"
+  ],
+  "dependencies": {
+    "@red-cup-engineering/node-js-function-engineering-services-section": "^0.5.1",
+    "@red-cup-engineering/semantic-record-journal-service": "^0.6.2"
+  },
+  "license": "MIT"
+}
